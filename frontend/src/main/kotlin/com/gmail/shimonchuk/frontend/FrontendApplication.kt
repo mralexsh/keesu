@@ -1,4 +1,4 @@
-package com.gmail.shimonchuk.client
+package com.gmail.shimonchuk.frontend
 
 class FrontendApplication
 

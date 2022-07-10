@@ -1,4 +1,4 @@
-package com.gmail.shimonchuk.client
+package com.gmail.shimonchuk.hmipanel
 
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
