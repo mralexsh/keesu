@@ -10,12 +10,9 @@ fun main(args: Array<String>) {
     ClassLoader.getSystemResource(properties)?.apply {
         openStream().use {
             val props = Properties()
+            val sender = Sender(props)
             props.load(it)
-            SensorsRuntime(props, emulationData) { c -> handleEmulationContent(c) }.start()
+            SensorsRuntime(props, emulationData) { c -> sender.send(c) }.start()
         }
     } ?: logger.error { "File $properties not found!" }
-}
-
-private fun handleEmulationContent(content: String) {
-    logger.info { "-- CON++TENT --: $content" }
 }
