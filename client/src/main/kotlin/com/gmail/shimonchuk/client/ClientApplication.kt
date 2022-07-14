@@ -7,7 +7,6 @@ class ClientApplication
 private val logger = KotlinLogging.logger {}
 fun main(args: Array<String>) {
     val properties = "application.properties"
-
     ClassLoader.getSystemResource(properties)?.apply {
         openStream().use {
             val props = Properties()
