@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
 	kotlin("jvm") version "1.6.21"
+	kotlin("plugin.serialization") version "1.6.21"
 }
 
 group = "com.gmail.shimonchuk"
@@ -19,6 +20,7 @@ dependencies {
 	implementation("ch.qos.logback:logback-classic:1.2.6")
 	testImplementation(kotlin("test"))
 	implementation(kotlin("script-runtime"))
+	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3")
 }
 
 tasks.withType<KotlinCompile> {

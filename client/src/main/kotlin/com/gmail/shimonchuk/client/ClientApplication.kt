@@ -2,7 +2,6 @@ package com.gmail.shimonchuk.client
 
 import mu.KotlinLogging
 import java.util.*
-import kotlin.collections.ArrayList
 
 class ClientApplication
 private val logger = KotlinLogging.logger {}
@@ -13,7 +12,11 @@ fun main(args: Array<String>) {
         openStream().use {
             val props = Properties()
             props.load(it)
-            SensorsRuntime(props, emulationData).start()
+            SensorsRuntime(props, emulationData) { c -> handleEmulationContent(c) }.start()
         }
     } ?: logger.error { "File $properties not found!" }
+}
+
+private fun handleEmulationContent(content: String) {
+    logger.info { "-- CON++TENT --: $content" }
 }
