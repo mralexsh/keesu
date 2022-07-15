@@ -10,5 +10,4 @@ data class Snapshot(
     val description: String,
     val trends: HashMap<Int, MutableList<Int>>,
     val timestamp: Long = Date().time
-) {
-}
+)
