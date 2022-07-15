@@ -1,9 +1,9 @@
-package com.gmail.shimonchuk.client
+package com.gmail.shimonchuk.backend
 
-import kotlinx.serialization.Serializable
+import com.fasterxml.jackson.annotation.JsonInclude
 import java.util.*
 
-@Serializable
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 data class Snapshot(
     val name: String,
     val description: String,

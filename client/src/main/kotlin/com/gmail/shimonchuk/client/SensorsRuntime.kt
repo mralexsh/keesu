@@ -32,7 +32,7 @@ class SensorsRuntime(props: Properties, private val sensors: List<Sensor>, priva
         if (jitterCounter < jitterSize) {
             jitterCounter++
         } else {
-            fn(Json.encodeToString(Snapshot(nodeName, nodeDescription, trends)))
+            fn(Json.encodeToString(Snapshot(nodeName, nodeDescription, trends, Date().time)))
             trends.forEach { t -> t.value.clear() }
             jitterCounter = 0
         }
