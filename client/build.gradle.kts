@@ -39,6 +39,6 @@ tasks.withType<Test> {
 
 tasks.withType<ShadowJar> {
     manifest {
-        attributes["Main-Class"] = "com.gmail.shimonchuk.client.ClientApplicationKt"
+        attributes["Main-Class"] = "com.gmail.shimonchuk.client.ClientApplication"
     }
 }
