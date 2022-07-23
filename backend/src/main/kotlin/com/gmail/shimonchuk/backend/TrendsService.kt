@@ -19,9 +19,8 @@ class TrendsService(@Value("\${trends.service.buffer.size}") private val bufferS
         }
     }
 
-    fun fetch(): String {
-        val om = ObjectMapper()
-        return om.writeValueAsString(SnapshotView(snapshots))
+    fun fetch(): SnapshotView {
+        return SnapshotView(snapshots)
     }
 
 }

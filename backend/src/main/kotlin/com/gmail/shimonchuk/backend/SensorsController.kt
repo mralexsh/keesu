@@ -2,6 +2,7 @@ package com.gmail.shimonchuk.backend
 
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.context.request.async.DeferredResult
@@ -34,7 +35,7 @@ class SensorsController {
         val executor = Executors.newSingleThreadExecutor()
         executor.execute {
             try {
-                emitter.send(trendsService.fetch())
+                emitter.send(trendsService.fetch(), MediaType.APPLICATION_JSON)
                 emitter.complete()
             } catch (e: IOException) {
                 emitter.completeWithError(e)
